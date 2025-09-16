@@ -14,20 +14,19 @@ function App() {
   //default ταξινομηση
   const [sortOption, setSortOption] = useState("name");
 
-  //useEffect -> τρεχει μολις φορτωσει το component
   useEffect(() => {
     //καλουμε το API
     fetch("https://api.github.com/users/google/repos?per_page=100")
       .then((response) => response.json())
       .then((data) => {
-        setRepos(data); //αποθηκευση repos στο state
-        setLoading(false); //σταματαει το loading
+        setRepos(data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching repos", error);
         setLoading(false);
       });
-  }, []); //θα τρεξει μονο μια φορα στην αρχη
+  }, []);
 
   //φιλτραρουμε τα repos με βαση το search
   const filteredRepos = repos.filter((repo) =>
@@ -55,7 +54,6 @@ function App() {
         <select
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
-          //style={{ padding: "6px", borderRadius: "6px" }}
         >
           <option value="name">Name (A-Z)</option>
           <option value="stars">Stars (desc)</option>
