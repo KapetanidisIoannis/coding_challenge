@@ -25,7 +25,7 @@
 
 1. Κάνε clone το repository:
    ```bash
-   git clone https://github.com/KapetanidisIoannis/Junior_Coding_Challenge.git
+   git clone https://github.com/KapetanidisIoannis/Coding_Challenge.git
    cd Junior_Coding_Challenge
    ```
 2. Εγκατάστησε τα dependencies: npm install
